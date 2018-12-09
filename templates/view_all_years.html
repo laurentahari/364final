@@ -1,0 +1,21 @@
+<h1>All Years</h1>
+
+{% extends 'base.html' %}
+
+{% block navigation %}
+ {{ super() }}
+{% endblock %}
+
+{% block content %}
+
+<ul>
+{% for y in years %}
+    <li><a href="http://localhost:5000/year/{{ y.year }}">{{ y.year }}</a></li>
+{% endfor %}
+</ul>
+
+{% for message in get_flashed_messages() %}
+    <strong>*** {{ message }} ***</strong>
+{% endfor %}
+
+{% endblock %}

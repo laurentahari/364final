@@ -1,0 +1,16 @@
+<h1>{{ collection.name }}</h1>
+{% extends 'base.html' %}
+
+{% block navigation %}
+ {{ super() }}
+{% endblock %}
+
+{% block content %}
+
+{% for sg in movies %}
+      <strong>{{ sg }}</strong>
+    <br><br>
+{% endfor %}
+
+
+{% endblock %}

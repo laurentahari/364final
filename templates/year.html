@@ -1,0 +1,29 @@
+<h1>The Year {{ yid }} & Searched Movie(s)</h1>
+
+{% extends 'base.html' %}
+
+{% block navigation %}
+ {{ super() }}
+{% endblock %}
+
+{% block content %}
+
+<ul>
+{% for m in movies %}
+    <li>
+        {{ m }}
+        <ul>
+        Genre(s):
+            {% for g in m.genre %}
+            <li> {{ g.genre }}</li>
+            {% endfor %}
+        </ul>
+    </li>
+{% endfor %}
+</ul>
+
+{% for message in get_flashed_messages() %}
+    <strong>*** {{ message }} ***</strong>
+{% endfor %}
+
+{% endblock %}

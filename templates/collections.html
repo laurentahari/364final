@@ -1,0 +1,29 @@
+<h1>My collections</h1>
+
+{% extends 'base.html' %}
+
+{% block navigation %}
+ {{ super() }}
+{% endblock %}
+
+{% block content %}
+
+<ul>
+{% for c in collections %}
+    <li><a href="http://localhost:5000/collection/{{ c.id }}">{{ c.name }}</a></li>
+    <form action="{{ url_for('update', col=c.id) }}" method="POST">
+        {{ formu.csrf_token }}
+        {{ formu.update() }}
+    </form>
+    <form action="{{ url_for('delete', col=c.id) }}" method="POST">
+        {{ formd.csrf_token }}
+        {{ formd.delete() }}
+    </form>
+{% endfor %}
+</ul>
+
+{% for message in get_flashed_messages() %}
+    <strong>*** {{ message }} ***</strong>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% if current_user.is_authenticated %}
+    <a href="{{ url_for('logout') }}">Sign Out {{current_user.username}}</a>
+{% else %}
+    <a href="{{ url_for('login') }}">Sign In</a>
+{% endif %}
+<br><br>
+
+{% block content %}
+
+{% endblock %}
+
+
+<p>------------</p>
+<h3>Movie Database</h3>
+<ul>
+    <li><a href="{{ url_for('index')}}">Home</a></li>
+    <li><a href="{{ url_for('display_all_titles')}}">Titles</a></li>
+    <li><a href="{{ url_for('create_collection')}}">Create Collection</a></li>
+    <li><a href="{{ url_for('collections')}}">View Collection</a></li>
+    <li><a href="{{ url_for('display_all_years')}}">Years</a></li>
+</ul>
