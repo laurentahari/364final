@@ -1,4 +1,3 @@
-Application Function:
 My application allows users to log in and search for movies. I use the TMDB API to obtain movie titles, release year, plot information and other related movie information. My code allows users to search for their favorite movie and see the related movie information. They are able to see the movie title, year and plot summary. Users are able to create a collection of their favorite movies and store it in a table. A user is able to update the name of the collection and delete a collection if they want to. Lastly, the user will be able to view the years and genres of the movies they have searched for. This information will also be saved in a table. A user will have to log in to see their saved collections. 
 
 # SI 364 - Fall 2018 - Final Project
